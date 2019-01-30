@@ -1,0 +1,557 @@
+{
+  "children": [
+    {
+      "children": [],
+      "name": "ERROR_PATH",
+      "value": "@RequestMapping(value=ERROR_PATH,produces = {MediaType.TEXT_HTML_VALUE})\npublic String handleError(HttpServletRequest request){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobService.save(,)",
+          "value": "JobService.save(job, StringUtil.getIntByString(session.getAttribute(\"uid\")))"
+        }
+      ],
+      "name": "/save",
+      "value": "@RequestMapping(value = \"/save\")\npublic String save(NewJob job, ModelMap modelMap){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobService.updata()",
+          "value": "JobService.updata(job)"
+        }
+      ],
+      "name": "/updata",
+      "value": "@RequestMapping(value = \"/updata\")\npublic String updata(NewJob job){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobService.delect()",
+          "value": "JobService.delect(id)"
+        },
+        {
+          "children": [],
+          "name": "JobServiceJobService.queryByJid()",
+          "value": "JobServiceJobService.queryByJid(id)"
+        },
+        {
+          "children": [],
+          "name": "UserJobService.queryByJid()",
+          "value": "UserJobService.queryByJid(id)"
+        }
+      ],
+      "name": "/delect/{id}",
+      "value": "@RequestMapping(value = \"/delect/{id}\")\npublic String delectJob(@PathVariable Integer id){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobService.updataOrUse(,)",
+          "value": "JobService.updataOrUse(id, 0)"
+        }
+      ],
+      "name": "/close/{id}/{or}",
+      "value": "@RequestMapping(value = \"/close/{id}/{or}\")\npublic String closeJob(@PathVariable Integer id,@PathVariable Integer or){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobService.query()",
+          "value": "JobService.query(id)"
+        },
+        {
+          "children": [],
+          "name": "JobServiceService.queryUserImg()",
+          "value": "JobServiceService.queryUserImg(job.getUid())"
+        },
+        {
+          "children": [],
+          "name": "UserService.queryUserImg()",
+          "value": "UserService.queryUserImg(job.getUid())"
+        }
+      ],
+      "name": "/job",
+      "value": "@RequestMapping(value = \"/job\")\npublic String getJob(int id, ModelMap modelMap){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobService.query()",
+          "value": "JobService.query(id)"
+        },
+        {
+          "children": [],
+          "name": "JobServiceJobService.queryByUidAndPid(,)",
+          "value": "JobServiceJobService.queryByUidAndPid(uid,id)"
+        },
+        {
+          "children": [],
+          "name": "UserJobService.queryByUidAndPid(,)",
+          "value": "UserJobService.queryByUidAndPid(uid,id)"
+        }
+      ],
+      "name": "/result",
+      "value": "@RequestMapping(value = \"/result\",method = RequestMethod.POST)\npublic String touJob(int id){}"
+    },
+    {
+      "children": [],
+      "name": "/issue",
+      "value": "@RequestMapping(\"/issue\")\npublic String issuePosiTion(ModelMap model){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobServiceJobService.delectByUidAndJid(,)",
+          "value": "JobServiceJobService.delectByUidAndJid(uid, jid)"
+        },
+        {
+          "children": [],
+          "name": "UserJobService.delectByUidAndJid(,)",
+          "value": "UserJobService.delectByUidAndJid(uid, jid)"
+        }
+      ],
+      "name": "delectUJ/{jid}",
+      "value": "@RequestMapping(\"delectUJ/{jid}\")\npublic String userJob(@PathVariable int jid){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobServiceJobService.updataUJSatate(,,)",
+          "value": "JobServiceJobService.updataUJSatate(uid, jid, state)"
+        },
+        {
+          "children": [],
+          "name": "UserJobService.updataUJSatate(,,)",
+          "value": "UserJobService.updataUJSatate(uid, jid, state)"
+        }
+      ],
+      "name": "/updataUJ/{uid}/{jid}",
+      "value": "@RequestMapping(\"/updataUJ/{uid}/{jid}\")\npublic String updataUserJob(String state,@PathVariable int uid,@PathVariable int jid){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobService.queryByPageNoClose()",
+          "value": "JobService.queryByPageNoClose(id)"
+        },
+        {
+          "children": [],
+          "name": "UserService.queryUserImg()",
+          "value": "UserService.queryUserImg(job.getUid())"
+        }
+      ],
+      "name": "/",
+      "value": "@RequestMapping(\"/\")\npublic String index(ModelMap model,@RequestParam(defaultValue = \"0\") Integer id){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobService.queryByNameAndPage(,)",
+          "value": "JobService.queryByNameAndPage(name,id)"
+        },
+        {
+          "children": [],
+          "name": "UserService.queryUserImg()",
+          "value": "UserService.queryUserImg(job.getUid())"
+        }
+      ],
+      "name": "/soso",
+      "value": "@RequestMapping(\"/soso\")\npublic String soso(String place, String name,@RequestParam(defaultValue = \"0\") Integer id ,ModelMap model){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "MailUtil.sendMail(,,)",
+          "value": "MailUtil.sendMail(mail,\"密码已重置\",\"你的新密码为：\"+stringBuffer.toString())"
+        },
+        {
+          "children": [],
+          "name": "UserService.updataPassWord(,)",
+          "value": "UserService.updataPassWord(mail,stringBuffer.toString())"
+        }
+      ],
+      "name": "/forgetPassword",
+      "value": "@RequestMapping(value = \"/forgetPassword\",method = RequestMethod.POST)\npublic String forgetPassword(String mail){}"
+    },
+    {
+      "children": [],
+      "name": "/forget",
+      "value": "@RequestMapping(\"/forget\")\npublic String forgetPage(){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobServiceJob = userJobService.queryByUidAndPid(,)",
+          "value": "JobServiceJob = userJobService.queryByUidAndPid(uid, jid)"
+        },
+        {
+          "children": [],
+          "name": "UserJobService.queryByUidAndPid(,)",
+          "value": "UserJobService.queryByUidAndPid(uid, jid)"
+        }
+      ],
+      "name": "/editTop/{jid}/{uid}",
+      "value": "@RequestMapping(\"/editTop/{jid}/{uid}\")\npublic String editTop(@PathVariable int jid,@PathVariable int uid ,ModelMap model){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobServiceJobService.updataUkByUidAndJid(,,)",
+          "value": "JobServiceJobService.updataUkByUidAndJid(uid,jid,text)"
+        },
+        {
+          "children": [],
+          "name": "JobService.query()",
+          "value": "JobService.query(jid)"
+        },
+        {
+          "children": [],
+          "name": "UserJobService.updataUkByUidAndJid(,,)",
+          "value": "UserJobService.updataUkByUidAndJid(uid,jid,text)"
+        }
+      ],
+      "name": "/editTopEdit/{jid}/{uid}",
+      "value": "@RequestMapping(\"/editTopEdit/{jid}/{uid}\")\npublic String editTopEdit(String text,@PathVariable int jid, @PathVariable int uid){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobServiceJobList =  userJobService.queryByJid()",
+          "value": "JobServiceJobList =  userJobService.queryByJid(jid)"
+        },
+        {
+          "children": [],
+          "name": "UserJobService.queryByJid()",
+          "value": "UserJobService.queryByJid(jid)"
+        },
+        {
+          "children": [],
+          "name": "UserService.queryAll()",
+          "value": "UserService.queryAll(user.getUid())"
+        }
+      ],
+      "name": "/peoTop/{jid}",
+      "value": "@RequestMapping(\"/peoTop/{jid}\")\npublic String peoTop(@PathVariable int jid, ModelMap model){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "UserService.queryUserImg()",
+          "value": "UserService.queryUserImg(id)"
+        }
+      ],
+      "name": "self",
+      "value": "@RequestMapping(\"self\")\npublic String getMy(int id, ModelMap map){}"
+    },
+    {
+      "children": [],
+      "name": "/editmy/result",
+      "value": "@RequestMapping(\"/editmy/result\")\npublic String editmy(Personal personal){}"
+    },
+    {
+      "children": [],
+      "name": "/editmy",
+      "value": "@RequestMapping(\"/editmy\")\npublic String editMyPage(){}"
+    },
+    {
+      "children": [],
+      "name": "/editexper/result",
+      "value": "@RequestMapping(\"/editexper/result\")\npublic String editExper(Expectation expectation){}"
+    },
+    {
+      "children": [],
+      "name": "/editexper",
+      "value": "@RequestMapping(\"/editexper\")\npublic String editExperPage(){}"
+    },
+    {
+      "children": [],
+      "name": "/editedu/result",
+      "value": "@RequestMapping(\"/editedu/result\")\npublic String editEdu(Educational educational){}"
+    },
+    {
+      "children": [],
+      "name": "/editedu",
+      "value": "@RequestMapping(\"/editedu\")\npublic String editEduPage(){}"
+    },
+    {
+      "children": [],
+      "name": "/editCampus/result",
+      "value": "@RequestMapping(\"/editCampus/result\")\npublic String editSchool(Campus campus){}"
+    },
+    {
+      "children": [],
+      "name": "/editCampus",
+      "value": "@RequestMapping(\"/editCampus\")\npublic String editSchoolPage(){}"
+    },
+    {
+      "children": [],
+      "name": "/editHobby/result",
+      "value": "@RequestMapping(\"/editHobby/result\")\npublic String editHobby(SkillsHobby skillsHobby){}"
+    },
+    {
+      "children": [],
+      "name": "/editHobby",
+      "value": "@RequestMapping(\"/editHobby\")\npublic String editHobbyPage(){}"
+    },
+    {
+      "children": [],
+      "name": "/editwork/result",
+      "value": "@RequestMapping(\"/editwork/result\")\npublic String editWork(WorksShow worksShow){}"
+    },
+    {
+      "children": [],
+      "name": "/editwork",
+      "value": "@RequestMapping(\"/editwork\")\npublic String editWorkPage(){}"
+    },
+    {
+      "children": [],
+      "name": "/editSelf/result",
+      "value": "@RequestMapping(\"/editSelf/result\")\npublic String editSelf(MySelf mySelf){}"
+    },
+    {
+      "children": [],
+      "name": "/editSelf",
+      "value": "@RequestMapping(\"/editSelf\")\npublic String editSelfPage(){}"
+    },
+    {
+      "children": [],
+      "name": "",
+      "value": "@RequestMapping(\"\")\npublic String admin(){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "AdminService.queryByName()",
+          "value": "AdminService.queryByName(name)"
+        }
+      ],
+      "name": "/login",
+      "value": "@RequestMapping(\"/login\")\npublic String login(String name, String password){}"
+    },
+    {
+      "children": [],
+      "name": "/logout",
+      "value": "@RequestMapping(value = \"/logout\")\npublic String adminLogout() throws Exception{}"
+    },
+    {
+      "children": [],
+      "name": "/admin",
+      "value": "@RequestMapping(\"/admin\")\npublic String adminDel() throws Exception{}"
+    },
+    {
+      "children": [],
+      "name": "/admin/user",
+      "value": "@RequestMapping(\"/admin/user\")\npublic String adminUser() throws Exception{}"
+    },
+    {
+      "children": [],
+      "name": "/admin/job",
+      "value": "@RequestMapping(\"/admin/job\")\npublic String adminJob()throws Exception{}"
+    },
+    {
+      "children": [],
+      "name": "/admin/pass",
+      "value": "@RequestMapping(\"/admin/pass\")\npublic String adminPassPage()throws Exception{}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "AdminService.updataPasswordByName(,)",
+          "value": "AdminService.updataPasswordByName(\"admin\", password)"
+        }
+      ],
+      "name": "/pass/result",
+      "value": "@RequestMapping(\"/pass/result\")\npublic String adminPass(String password)throws Exception{}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "UserService.queryAll(,)",
+          "value": "UserService.queryAll(page-1,limit)"
+        }
+      ],
+      "name": "/queryAll",
+      "value": "@RequestMapping(\"/queryAll\")\npublic Result<User> adminGetUser(int page,int limit) throws Exception{}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "UserService.updataOrUse()",
+          "value": "UserService.updataOrUse(id)"
+        }
+      ],
+      "name": "/userOrUser",
+      "value": "@RequestMapping(value = \"/userOrUser\",method = RequestMethod.POST)\npublic String updataUserOr(int id) throws Exception{}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobService.queryByPage(,)",
+          "value": "JobService.queryByPage(page-1,limit)"
+        }
+      ],
+      "name": "/queryAllJob",
+      "value": "@RequestMapping(\"/queryAllJob\")\npublic Result<NewJob> adminGetJobs(int page,int limit) throws Exception{}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobService.updataOrUse()",
+          "value": "JobService.updataOrUse(id)"
+        }
+      ],
+      "name": "/jobOrUser",
+      "value": "@RequestMapping(value = \"/jobOrUser\",method = RequestMethod.POST)\npublic String updataJobOrUse(int id) throws Exception{}"
+    },
+    {
+      "children": [],
+      "name": "/login",
+      "value": "@RequestMapping(\"/login\")\npublic String loginPage(){}"
+    },
+    {
+      "children": [],
+      "name": "/signIn",
+      "value": "@RequestMapping(\"/signIn\")\npublic String signInPage(){}"
+    },
+    {
+      "children": [],
+      "name": "/exit",
+      "value": "@RequestMapping(\"/exit\")\npublic String exit(){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobService.query()",
+          "value": "JobService.query(userJob.getJid())"
+        },
+        {
+          "children": [],
+          "name": "JobService = userService.queryAll()",
+          "value": "JobService = userService.queryAll(id)"
+        },
+        {
+          "children": [],
+          "name": "UserJobService.queryByUid()",
+          "value": "UserJobService.queryByUid(id)"
+        },
+        {
+          "children": [],
+          "name": "UserService.queryAll()",
+          "value": "UserService.queryAll(id)"
+        }
+      ],
+      "name": "/user",
+      "value": "@RequestMapping(\"/user\")\npublic String userPage(int id, ModelMap modelMap){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobServiceService.userSingIn()",
+          "value": "JobServiceService.userSingIn(user)"
+        },
+        {
+          "children": [],
+          "name": "UserService.userSingIn()",
+          "value": "UserService.userSingIn(user)"
+        }
+      ],
+      "name": "/signIn/result",
+      "value": "@RequestMapping(value = \"/signIn/result\", method = RequestMethod.POST)\npublic String userSignIn(User user, ModelMap model){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobService.getMail()",
+          "value": "JobService.getMail()"
+        },
+        {
+          "children": [],
+          "name": "UserService.queryAll()",
+          "value": "UserService.queryAll(userService.getIdByUsername(user.getMail()))"
+        }
+      ],
+      "name": "/login/result",
+      "value": "@RequestMapping(value = \"/login/result\", method = RequestMethod.POST)\npublic String userLogin(User user, ModelMap model){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobServiceService.saveUserImg(,,)",
+          "value": "JobServiceService.saveUserImg(FileUtil.uploadFile(file, uid), uid)"
+        },
+        {
+          "children": [],
+          "name": "UserService.saveUserImg(,,)",
+          "value": "UserService.saveUserImg(FileUtil.uploadFile(file, uid), uid)"
+        }
+      ],
+      "name": "/upload",
+      "value": "@RequestMapping(value = \"/upload\", method = RequestMethod.POST)\npublic String uploadImg(@RequestParam(\"file\") MultipartFile file) throws Exception{}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobServiceService.queryUserImg()",
+          "value": "JobServiceService.queryUserImg(id)"
+        },
+        {
+          "children": [],
+          "name": "UserService.queryUserImg()",
+          "value": "UserService.queryUserImg(id)"
+        }
+      ],
+      "name": "/img/{id}",
+      "value": "@RequestMapping(\"/img/{id}\")\npublic void uploadPage(@PathVariable int id, HttpServletResponse response) throws IOException{}"
+    },
+    {
+      "children": [],
+      "name": "/upPass",
+      "value": "@RequestMapping(\"/upPass\")\npublic String upPassPage(){}"
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "name": "JobService = userService.queryAll()",
+          "value": "JobService = userService.queryAll(uid)"
+        },
+        {
+          "children": [],
+          "name": "UserService.queryAll()",
+          "value": "UserService.queryAll(uid)"
+        }
+      ],
+      "name": "/upPass/result",
+      "value": "@RequestMapping(value = \"/upPass/result\", method = RequestMethod.POST)\npublic String upPass(String mail, String password){}"
+    }
+  ],
+  "name": "JavaApplication"
+}

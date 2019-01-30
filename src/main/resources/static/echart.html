@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.lib -->
+    <script src="lib/echarts.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 100px;height:60px;"></div>
+<script type="text/javascript">
+    $("#main").height($(document).height());
+    $("#main").width($(document).width());
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    myChart.showLoading();
+    $.get('/tree', function (data) {
+        myChart.hideLoading();
+
+        echarts.util.each(data.children, function (datum, index) {
+            index % 2 === 0 && (datum.collapsed = true);
+        });
+
+        myChart.setOption(option = {
+            tooltip: {
+                trigger: 'item',
+                triggerOn: 'mousemove',
+                formatter: function(data){
+                    return data.value.replace("\n","<br>")
+                },
+            },
+            series: [
+                {
+                    type: 'tree',
+
+                    data: [data],
+
+                    top: '1%',
+                    left: '7%',
+                    bottom: '1%',
+                    right: '20%',
+                    initialTreeDepth: 2,
+
+                    roam: true,
+                    symbolSize: 10,
+                    //节点
+                    itemStyle:{
+                        borderColor: '#0072C6',
+                        color: {
+                            type: 'radial',
+                            x: 0.5,
+                            y: 0.5,
+                            r: 0.5,
+                            colorStops: [{
+                                offset: 0, color: '#fff' // 0% 处的颜色
+                            }, {
+                                offset: 1, color: '#0072C6' // 100% 处的颜色
+                            }],
+                            global: false // 缺省为 false
+                        }
+                    },
+                    //线
+                    lineStyle:{
+                        color: '#ccc',
+                        width: '1.5',
+                        curveness: '0.5',//曲度
+                    },
+                    //节点
+                    label: {
+                        normal: {
+                            position: 'left',
+                            formatter: function(data){
+                                return data.name
+                            },
+                            verticalAlign: 'middle',
+                            align: 'right',
+                            fontSize: 12,
+                            color: '#111'
+                        }
+                    },
+
+                    leaves: {
+                        label: {
+                            normal: {
+                                position: 'right',
+                                verticalAlign: 'middle',
+                                align: 'left'
+                            }
+                        }
+                    },
+
+
+                    expandAndCollapse: true,
+                    animationDuration: 550,
+                    animationDurationUpdate: 750
+                }
+            ]
+        });
+    });
+</script>
+</body>
+</html>
