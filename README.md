@@ -1,8 +1,31 @@
-# ProjectTree
-SpringMVC应用分析系统（新人熟悉项目必备工具）从Controller到Service到Dao层一目了然，最直观最方便的代码分析工具
+# ProjectTree简介
 
-# 公测版已发布
+很多新人进入一家新公司后，最头疼的就是如何快速了解公司的业务和项目架构。
 
-欢迎反馈Bug 
 
-下载：https://github.com/yueshutong/ProjectTree/releases
+因为文档很少，没有文档，或者是文档严重落伍， 根本没法看；如果你碰到一个特别热心的老员工，事无巨细地给你讲，随时在你身边答疑解惑， 那简直是天大的好运气， 现实是大家都很忙，没人给你讲解。
+
+
+很快就要深入项目做开发了，怎么办呢？
+
+
+我在加入新公司后，就遇到了悲催的情况。而且在一个多月时间里，我依旧没有熟悉项目细节。于是，我连夜做了这款可视化工具！帮助更多像我新人快速熟悉项目代码！
+
+# 下载
+
+发行版（releases）
+
+# 执行
+
+```
+java -jar projecttree-x.x.x-SNAPSHOT.jar --pt=D:\src\main\java
+```
+--pt 追加本地项目包所在路径
+
+# 反馈
+
+由于作者水平有限，系统一定存在一些漏洞或不足，希望各位专家、大佬提出批评指正！
+
+作者博客：http://www.yueshutong.cn
+
+联系邮箱：yster@foxmail.com
