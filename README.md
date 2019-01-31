@@ -41,6 +41,10 @@ java -jar projecttree-x.x.x-SNAPSHOT.jar --pt=D:\src\main\java
 
 由于作者水平有限，系统一定存在一些漏洞或不足，希望各位专家、大佬提出批评指正！
 
+联系邮箱：yster@foxmail.com
+
 作者博客：http://www.yueshutong.cn
 
-联系邮箱：yster@foxmail.com
+Github：https://github.com/yueshutong/ProjectTree
+
+Gitee：https://gitee.com/zyzpp/ProjectTree
